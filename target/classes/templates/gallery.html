@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Image Gallery</title>
+</head>
+<body>
+<h1>Image Gallery</h1>
+<div>
+    <ul>
+        <li th:each="image : ${images}">
+            <img th:src="${image}" style="width: 200px; height: auto;"/>
+        </li>
+    </ul>
+</div>
+
+<a href="/upload">Upload More Images</a>
+</body>
+</html>
