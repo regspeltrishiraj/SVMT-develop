@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.security.User;
+
 @Controller
 public class FormController {
 
@@ -16,13 +18,13 @@ public class FormController {
 
     @GetMapping("/register")
     public String showSignUpForm(Model model) {
-        model.addAttribute("form", new Form());
+        model.addAttribute("user", new User());
         return "signup_form";
     }
 
     @PostMapping("/register")
-    public String registerForm(@ModelAttribute Form form) {
-        formService.registerForm(form);
+    public String registerForm(@ModelAttribute User user) {
+        formService.registerForm(user);
         return "redirect:/success";
     }
 
