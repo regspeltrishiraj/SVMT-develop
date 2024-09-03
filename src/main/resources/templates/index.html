@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="ISO-8859-1">
     <meta charset="UTF-8">
@@ -88,7 +88,7 @@
                 <a class="nav-link" href="HTML/contact.html"><b>Contact</b></a>
               </li>
               
-              <li class="nav-item">
+              <li class="nav-item me-5">
                 <a class="nav-link" href="/admin"><b>Admin</b></a>
               </li>
 			  <li class="nav-item">
@@ -217,9 +217,10 @@
             <h2>News</h2>
             <div class="news-marquee">
                 <ul class="news-list">
-                    <li><a href="#" class="news-link">Now Paytm Paymode is available for all Services in Karnataka One.</a></li>
-                    <li><a href="#" class="news-link">Now Bruhat Bengaluru Mahanagara Palike and BDA Khata Services are Available in KarnatakaOne Centers</a></li>
-                    <li><a href="#" class="news-link">Now Bruhat Bengaluru Mahanagara Palike and BDA Khata Services are Available in KarnatakaOne Centers</a></li>
+					<li th:each="link : ${links}">
+					            <a th:href="@{${link.url}}" th:text="${link.title}">Now Bruhat Bengaluru Mahanagara Palike and BDA Khata Services are Available in KarnatakaOne Centers</a>
+					        </li>
+                    
                     <li><a href="#" class="news-link">Now Bruhat Bengaluru Mahanagara Palike and BDA Khata Services are Available in KarnatakaOne Centers</a></li>
                     <!-- Add more links as needed -->
                 </ul>

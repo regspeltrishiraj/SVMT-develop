@@ -10,6 +10,7 @@ public class ApplicationController {
 	public String HomePage() {
 		return "index";
 	}
+	
 	@GetMapping("HTML/contact.html")
 	public String contactPage() {
 		return "contact";
