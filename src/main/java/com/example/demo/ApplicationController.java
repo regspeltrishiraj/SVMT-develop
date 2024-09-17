@@ -71,6 +71,17 @@ public class ApplicationController {
 	public String adminPage() {
 		return "admin";
 	}
+
+	@GetMapping("volunteer")
+	public String volunteerPage() {
+		return "volunteer";
+	}
+
+	@GetMapping("user")
+	public String userPage() {
+		return "user";
+	}
+	
 	@GetMapping("/login")
 	public String login() {
 		return "login";
