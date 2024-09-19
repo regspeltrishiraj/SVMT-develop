@@ -24,12 +24,10 @@ public class MyUserDetailsService implements UserDetailsService {
 		if(user == null) {
 			throw new UsernameNotFoundException("User not found!");
 		}
+
+		return new UserPrincipal(user);
 		
-		return new org.springframework.security.core.userdetails.User(
-			user.getUsername(),
-			user.getPassword(),
-			mapRolesToAuthorities(user.getRoles())
-		);
+
 	}
 
 	private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Set<Role> roles) {
